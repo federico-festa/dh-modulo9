@@ -33,7 +33,7 @@ class Gif extends Component {
 
     render() {
         return (
-            <body>
+            <div>
                 {this.state.gif.map(function (gif, i) {
                     return <div className="container" >
                         <div className="row text-center">
@@ -49,7 +49,7 @@ class Gif extends Component {
                     </div>
                 }
                 )}
-            </body>
+            </div>
         );
     };
 }
