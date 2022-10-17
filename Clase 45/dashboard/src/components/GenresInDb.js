@@ -17,8 +17,8 @@ class GenresInDb extends Component {
     }
 
     mouse() {
-        const h6 = document.querySelector('h6');
-        h6.classList.add('bg-secondary');
+        const cardBody = document.querySelector('.card2');
+        cardBody.classList.toggle('bg-secondary');
     };
 
     render() {
@@ -29,7 +29,7 @@ class GenresInDb extends Component {
                         <div className="card-header py-3">
                             <h6 onMouseOver={this.mouse} className="m-0 font-weight-bold text-gray-800">Genres in Data Base</h6>
                         </div>
-                        <div className="card-body">
+                        <div className="card-body card2">
                             <div className="row">
                                 {
                                     this.state.genresList.map((genre, index) => {
