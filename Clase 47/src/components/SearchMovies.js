@@ -5,21 +5,20 @@ import { useState, useEffect, useRef } from 'react';
 
 function SearchMovies() {
 
+	// Credenciales de API
+	const apiKey = '3f4a10d4'; // Intenta poner cualquier cosa antes para probar
+
 	// const keyword = 'action';
 
 	const [keyword, setKeyword] = useState('');
 
-	const submit = (e) => {
-		setKeyword(e.search.current.value)
-	}
-
-	console.log(search)
-
-	// Credenciales de API
-	const apiKey = '3f4a10d4'; // Intenta poner cualquier cosa antes para probar
-
-	const search = useRef()
+	const search = useRef(null);
 	
+	const handleSubmit = () => {
+		console.log(search.current.value);
+		setKeyword(search.current.value)
+	};	
+
 	const [movies, setMovies] = useState([]);
 
 	useEffect(() => {
@@ -46,7 +45,7 @@ function SearchMovies() {
 										<label htmlFor="">Buscar por título:</label>
 										<input type="text" className="form-control" ref={search} />
 									</div>
-									<button className="btn btn-info" onSubmit={submit}>Search</button>
+									<button className="btn btn-info" onClick={handleSubmit}>Search</button>
 								</form>
 							</div>
 						</div>
