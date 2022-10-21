@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 
 // import noPoster from '../assets/images/no-poster.jpg';
 
-function SearchMovies() {
+function SearchMovies(props) {
 
 	// Credenciales de API
 	const apiKey = '3f4a10d4'; // Intenta poner cualquier cosa antes para probar
@@ -15,8 +15,7 @@ function SearchMovies() {
 	const search = useRef(null);
 	
 	const handleSubmit = () => {
-		console.log(search.current.value);
-		setKeyword(search.current.value)
+		setKeyword(search.current.value);
 	};	
 
 	const [movies, setMovies] = useState([]);
