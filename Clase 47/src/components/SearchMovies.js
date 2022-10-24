@@ -14,9 +14,11 @@ function SearchMovies(props) {
 
 	const search = useRef(null);
 	
-	const handleSubmit = () => {
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log(search.current.value);
 		setKeyword(search.current.value);
-	};	
+	};
 
 	const [movies, setMovies] = useState([]);
 
@@ -39,12 +41,12 @@ function SearchMovies(props) {
 						<div className="row my-4">
 							<div className="col-12 col-md-6">
 								{/* Buscador */}
-								<form method="GET">
+								<form method="GET" onSubmit={handleSubmit}>
 									<div className="form-group">
 										<label htmlFor="">Buscar por título:</label>
 										<input type="text" className="form-control" ref={search} />
 									</div>
-									<button className="btn btn-info" onClick={handleSubmit}>Search</button>
+									<button className="btn btn-info" type='submit' >Search</button>
 								</form>
 							</div>
 						</div>
